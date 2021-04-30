@@ -13,12 +13,15 @@
         >
           Increment
         </NuxtLink>
+        <button @click="getData">axios test</button>
       </div>
+      <div>{{title}}</div>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   head() {
     return {
@@ -32,6 +35,17 @@ export default {
       ]
     }
   },
+  data() {
+    return {
+      title: ''
+    }
+  },
+  methods: {
+    async getData() {
+      const {data} = await this.$axios.get('https://hn.algolia.com/api/v1/items/1');
+      this.title = data.title;
+    }
+  }
 }
 </script>
 
