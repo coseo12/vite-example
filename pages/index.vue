@@ -20,9 +20,15 @@
         >
           Content
         </NuxtLink>
-        <button @click="getData">axios test</button>
+        <button @click="$fetch">axios test</button>
       </div>
-      <div>{{ title }}</div>
+      <p v-if="$fetchState.pending">Fetching mountains...</p>
+      <p v-else-if="$fetchState.error">An error occurred :(</p>
+      <div v-else>
+        <h1>Nuxt Mountains</h1>
+        <p>{{ title }}</p>
+        <button @click="$fetch">Refresh</button>
+      </div>
     </div>
   </div>
 </template>
@@ -44,6 +50,12 @@ export default {
     return {
       title: "",
     };
+  },
+  async mounted() {
+    // await this.getData();
+  },
+  async fetch() {
+    await this.getData();
   },
   methods: {
     async getData() {
