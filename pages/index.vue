@@ -2,10 +2,8 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">
-        vite-example
-      </h1>
-      <SomeComponet/>
+      <h1 class="title">vite-example</h1>
+      <SomeComponet />
       <div class="links">
         <NuxtLink
           to="/Increment"
@@ -24,37 +22,38 @@
         </NuxtLink>
         <button @click="getData">axios test</button>
       </div>
-      <div>{{title}}</div>
+      <div>{{ title }}</div>
     </div>
   </div>
 </template>
 <script>
-
 export default {
   head() {
     return {
-      title: 'Home',
+      title: "Home",
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'Increment exmaple'
-        }
-      ]
-    }
+          hid: "description",
+          name: "description",
+          content: "Increment exmaple",
+        },
+      ],
+    };
   },
   data() {
     return {
-      title: ''
-    }
+      title: "",
+    };
   },
   methods: {
     async getData() {
-      const {data} = await this.$axios.get('https://hn.algolia.com/api/v1/items/1');
+      const { data } = await this.$axios.get(
+        "https://hn.algolia.com/api/v1/items/1"
+      );
       this.title = data.title;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>
@@ -68,16 +67,8 @@ export default {
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

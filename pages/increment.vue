@@ -7,35 +7,37 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapMutations } from "vuex";
 
 export default {
-  middleware: ['local'],
+  layout() {
+    return "blog";
+  },
+  middleware: ["local"],
   head() {
     return {
-      title: 'Increment',
+      title: "Increment",
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'Increment exmaple'
-        }
-      ]
-    }
+          hid: "description",
+          name: "description",
+          content: "Increment exmaple",
+        },
+      ],
+    };
   },
   computed: {
     count() {
       return this.$store.state.test.counter;
-    }
+    },
   },
-  methods:{
+  methods: {
     ...mapMutations({
-      increment: 'test/increment'
-    })
-  }
-}
+      increment: "test/increment",
+    }),
+  },
+};
 </script>
 
 <style>
-
 </style>
