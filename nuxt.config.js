@@ -32,7 +32,7 @@ export default {
   buildModules: ["nuxt-vite"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios"],
+  modules: ["@nuxtjs/axios", "@nuxt/content"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

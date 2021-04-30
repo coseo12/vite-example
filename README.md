@@ -1,5 +1,7 @@
 # vite-example
 
+Nuxt 2 + vite + CMS
+
 - [Vite](https://vitejs.dev/)
 
 ## Build Setup

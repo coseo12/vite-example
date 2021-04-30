@@ -5,6 +5,7 @@
       <h1 class="title">
         vite-example
       </h1>
+      <SomeComponet/>
       <div class="links">
         <NuxtLink
           to="/Increment"
@@ -13,13 +14,20 @@
         >
           Increment
         </NuxtLink>
+
+        <NuxtLink
+          to="/blog/my-first-blog-post"
+          rel="noopener noreferrer"
+          class="button--green"
+        >
+          Content
+        </NuxtLink>
         <button @click="getData">axios test</button>
       </div>
       <div>{{title}}</div>
     </div>
   </div>
 </template>
-
 <script>
 
 export default {
