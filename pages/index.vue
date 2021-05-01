@@ -53,6 +53,10 @@ export default {
   },
   async mounted() {
     // await this.getData();
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+      setTimeout(() => this.$nuxt.$loading.finish(), 500);
+    });
   },
   async fetch() {
     await this.getData();

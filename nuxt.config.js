@@ -39,5 +39,10 @@ export default {
 
   router: {
     middleware: "global"
+  },
+
+  loading: {
+    color: "red",
+    height: "5px"
   }
 };
